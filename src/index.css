@@ -1,0 +1,286 @@
+html,body{
+    height: 100%;
+}
+
+body{
+    background: url(http://wallpaperget.com/images/background-for-music-1.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+a, a:hover, a:focus{
+    text-decoration: none;
+}
+
+.music-player{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1.header{
+    font-size: 60px;
+}
+
+.playlist{
+    margin-top: 50px;
+    width: 800px;
+    height: 150px;
+
+    background: url('https://hdwallsource.com/img/2015/1/sound-wallpaper-47335-48862-hd-wallpapers.jpg') repeat-x;
+    
+    /* https://hdwallsource.com/img/2015/1/sound-wallpaper-47335-48862-hd-wallpapers.jpg */
+    /* https://s3.amazonaws.com/pbblogassets/uploads/2015/08/Audio-Waveforms-Featued-Image-865x505.jpg */
+
+    background-position: 50% 70%;
+    position: relative;
+
+    /* animation: animatedBackground 10s linear infinite; */
+  
+}
+
+#tracker{
+    position:relative;
+    top: 108px;
+    width: 100%;
+}
+
+
+@keyframes animatedBackground {
+	from { background-position: 50% 70%; }
+	to { background-position: 100% 70%; }
+}
+
+
+ul.list{
+    width: 800px;
+    height: 200px;
+    overflow-y: auto;
+}
+
+li.song-item{
+    display: flex;
+    justify-content: space-between;    
+    padding: 10px;
+    background: #f5f5f5;
+    color: #888;
+    text-align: left;  
+    border-bottom: 1px solid #ccc;
+}
+
+li.song-item:hover{
+    background: #eaeaea;
+    color: #0d70ad;
+}
+
+li.song-item:hover a{
+    color: #0d70ad;
+}
+
+span.id{
+    width: 10%;
+}
+
+span.name{
+    width: 30%;
+}
+
+span.artist{
+    width: 40%;  
+}
+
+span.duration{
+    width: 10%;
+}
+
+li.song-item a{
+    color: #888;
+    position: relative;
+}
+
+span.playing{
+    width: 10%;
+    position: relative;
+    display: none;
+}
+
+span.playing:before{
+    content: "";
+    display: block;
+    width: 14px;
+    height: 10px;
+    background: url(http://static.mp3.zdn.vn/skins/zmp3-v4.2/images/playing.png);
+    animation: play .8s steps(3) infinite;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    z-index: 999;
+}
+
+@keyframes play {
+    0% { background-position: 0px; }
+    100% { background-position: 42px; }
+}
+
+ul.list li.active{
+    color: #0d70ad;
+    font-weight: bold;
+}
+
+ul.list li.active a{
+    color: #0d70ad;
+    font-weight: bold;
+}
+
+#audio{
+    width: 100%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+#audio-image{
+	position:relative;
+	overflow:hidden;
+	height:200px;
+	margin-bottom:15px;
+}
+
+#audio-info{
+	text-align:center;
+}
+
+#audio-info .artist{
+	font-weight:bold;
+}
+
+.cover{
+	width:100%;
+	z-index:1;
+}
+
+
+#buttons{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: rgba(5, 0, 0, 0.6);
+    padding: 5px 0;    
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#buttons button{
+	font-size: 20px;
+	background: none;
+    color: #fff;
+    width: 30px;
+	margin-right: 25px;
+}
+
+#buttons button:hover{
+	cursor: pointer;
+	color: #0d70ad;
+}
+
+.other{
+    position: absolute;
+    right: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.other button{
+    margin-right: 0 !important;
+}
+
+span.kbs{
+    padding: 4px 8px;
+    margin: 0 10px;
+    background: #fff;
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+span.kbs:hover{
+    background: #0d70ad;
+    cursor: pointer;
+}
+
+span.volume{
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+span.volume:hover i{
+    color: #0d70ad;
+}
+
+input#volume {
+	margin-left:2%;
+    -webkit-appearance: none !important;
+    height:1px;
+}
+
+input#volume::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background:url('img/circle.png') no-repeat;
+    height:16px;
+    width:16px;
+    cursor: pointer;
+}
+
+.volume i{
+    width: 22px;
+    color: #fff;
+}
+
+i.fa-volume-off {
+    display: none;
+}
+
+#stop, #pause{
+    display: none;
+}
+
+#progressBar { 
+   height: 5px;
+   width: 100%;
+   background: #fff;
+   position: relative;
+}
+
+#progressBar:hover{
+	cursor: pointer;
+}
+
+#progress {
+   background: #0d70ad;
+   height: 5px;
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+
+#current-time{
+	margin-left: 10px;
+	border-radius:5px;
+}
+
+#audio{
+    display: none;
+}
